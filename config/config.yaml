@@ -1,0 +1,12 @@
+database:
+  user: root
+  password: password
+  net: tcp
+  addr: localhost:3306
+  dbname: golang_test
+  allowNativePasswords: true
+  params:
+    parseTime: "true"
+
+server:
+  address: 8888
