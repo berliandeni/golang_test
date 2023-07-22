@@ -33,10 +33,6 @@ func (ur *ticketDb) CreateTrx(m *model.TicketTrx) (*model.TicketTrx, error) {
 		return nil, err
 	}
 
-	// if err := ur.db.Create(u).Error; err != nil {
-	// 	return nil, err
-	// }
-
 	pr := &model.Product{
 		Id: m.IdProduct,
 	}

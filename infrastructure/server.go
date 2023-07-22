@@ -29,9 +29,6 @@ func RunServer() {
 
 	go func() {
 		e.Logger.Fatal(e.Start(":" + port))
-		// if err := e.Start(":" + port); err != nil {
-		// 	log.Fatalln(err)
-		// }
 	}()
 	c := make(chan os.Signal)
 	signal.Notify(c, os.Interrupt, syscall.SIGINT, syscall.SIGTERM)
