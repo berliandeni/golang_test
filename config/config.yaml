@@ -3,7 +3,7 @@ database:
   password: password
   net: tcp
   addr: localhost:3306
-  dbname: golang_test
+  dbname: test_1
   allowNativePasswords: true
   params:
     parseTime: "true"
