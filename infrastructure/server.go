@@ -25,7 +25,7 @@ func RunServer() {
 	e = NewRouter(e, r.NewAppController())
 
 	port := config.C.Server.Address
-	fmt.Println("Server listen at http://localhost" + ":" + port)
+	fmt.Println("Server listen at http://localhost:" + port)
 
 	go func() {
 		e.Logger.Fatal(e.Start(":" + port))

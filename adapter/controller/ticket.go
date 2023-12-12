@@ -12,7 +12,7 @@ type ticketController struct {
 }
 
 type Ticket interface {
-	GetProductById(Context) error
+	GetProductById(Context) (interface{}, error)
 	CreateTrx(Context) error
 }
 
@@ -20,18 +20,18 @@ func NewTicketController(us ticketusecase.Ticket) Ticket {
 	return &ticketController{us}
 }
 
-func (p *ticketController) GetProductById(ctx Context) error {
+func (p *ticketController) GetProductById(ctx Context) (interface{}, error) {
 	in, err := strconv.Atoi(ctx.Param("id"))
 	if err != nil {
-		return err
+		return nil, err
 	}
 
 	resp, err := p.ticketUsecase.GetProductById(in)
 	if err != nil {
-		return err
+		return nil, err
 	}
 
-	return ctx.JSON(http.StatusOK, resp)
+	return resp, nil
 }
 
 func (p *ticketController) CreateTrx(ctx Context) error {
